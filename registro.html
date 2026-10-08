@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéVault | Registro</title>
+
+  <!-- Fuentes e iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" alt="Logo de PokéVault" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5gYF8yUi0aHlmH2EohUsjVlMr-Jc-oj6Jp1eS0lDGQ61rJit2q-g3h1_b6bGEahemji8zbBk8PSJcFe0Y-UnxSO0nT4vX-AjWiEXO8MtfmVhgbaVuPS6Z_N-GzwCsbu-z4NjyyGZq68QbWVdgXYaU8i00fgnJrBS2_O1Bc4QRic-feO81EQqohL8f8U2HaRq_XBHZKIEJymPgjgBYC7BtgMzxVqgGpyKg_BlPeo">
+        <span class="brand__name text-headline-sm">PokéVault</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Inicio</a></li>
+          <li><a class="main-nav__link is-active" href="registro.html" aria-current="page">Registro</a></li>
+          <li><a class="main-nav__link" href="quienes_somos.html">Quiénes somos</a></li>
+          <li><a class="main-nav__link" href="catalogo.html">Catálogo</a></li>
+          <li><a class="main-nav__link" href="carrito.html">Carrito</a></li>
+          <li><a class="main-nav__link" href="busqueda.html">Búsqueda</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="cart-link" href="carrito.html" aria-label="Ver carrito">
+          <span class="material-symbols-outlined icon-24">shopping_cart</span>
+          <span class="cart-count" id="cart-count">3</span>
+        </a>
+        <div class="avatar">
+          <span class="material-symbols-outlined icon-18">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-page">
+      <div class="form-page__inner">
+
+        <!-- Encabezado del formulario -->
+        <div class="form-intro">
+          <div class="eyebrow text-label-sm">
+            <span class="badge__dot"></span>
+            <span>Registro oficial de coleccionistas</span>
+          </div>
+          <div class="page-title">
+            <h1 class="text-headline-lg">Crea tu cuenta de Entrenador</h1>
+            <span class="page-title__bar"></span>
+          </div>
+          <p class="form-intro__text">
+            Regístrate para guardar tu lista de deseos y gestionar tus pedidos de muestra.
+          </p>
+        </div>
+
+        <!-- Formulario (la validación se hace en script.js) -->
+        <form class="form" id="trainer-register-form" novalidate>
+
+          <!-- Nombre -->
+          <div class="field" id="field-group-name">
+            <label class="field__label" for="reg-name">
+              <span>Nombre completo</span>
+              <span class="field__hint">Obligatorio</span>
+            </label>
+            <input class="field__input" id="reg-name" name="fullname" type="text" autocomplete="name" placeholder="Ash Ketchum">
+            <p class="field__error" id="err-name" role="alert">
+              <span class="material-symbols-outlined icon-14">error</span>
+              <span class="field__error-text">El nombre debe tener al menos 3 caracteres</span>
+            </p>
+          </div>
+
+          <!-- Correo (validado con expresión regular en el atributo pattern) -->
+          <div class="field" id="field-group-email">
+            <label class="field__label" for="reg-email">
+              <span>Correo electrónico</span>
+              <span class="field__hint">Obligatorio</span>
+            </label>
+            <input class="field__input" id="reg-email" name="email" type="email" autocomplete="email"
+                   placeholder="entrenador@pokevault.com"
+                   pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                   title="Ingresa un correo válido, por ejemplo entrenador@pokevault.com">
+            <p class="field__error" id="err-email" role="alert">
+              <span class="material-symbols-outlined icon-14">error</span>
+              <span class="field__error-text">Ingresa un correo electrónico válido</span>
+            </p>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="field" id="field-group-password">
+            <label class="field__label" for="reg-password">
+              <span>Contraseña</span>
+              <span class="field__hint">Mínimo 8 caracteres</span>
+            </label>
+            <div class="field__control">
+              <input class="field__input field__input--with-button" id="reg-password" name="password" type="password" autocomplete="new-password" placeholder="••••••••">
+              <button class="field__toggle" id="toggle-pwd-btn" type="button" aria-label="Mostrar contraseña">
+                <span class="material-symbols-outlined icon-18">visibility</span>
+              </button>
+            </div>
+            <p class="field__error" id="err-password" role="alert">
+              <span class="material-symbols-outlined icon-14">error</span>
+              <span class="field__error-text">La contraseña debe incluir mínimo 8 caracteres</span>
+            </p>
+          </div>
+
+          <!-- Fecha de nacimiento y teléfono -->
+          <div class="field-row">
+            <div class="field" id="field-group-birthdate">
+              <label class="field__label" for="reg-birthdate">
+                <span>Fecha de nacimiento</span>
+              </label>
+              <input class="field__input" id="reg-birthdate" name="birthdate" type="date">
+              <p class="field__error" id="err-birthdate" role="alert">
+                <span class="material-symbols-outlined icon-14">error</span>
+                <span class="field__error-text">Debes ser mayor de 14 años para registrarte</span>
+              </p>
+            </div>
+
+            <div class="field" id="field-group-phone">
+              <label class="field__label" for="reg-phone">
+                <span>Teléfono</span>
+              </label>
+              <input class="field__input" id="reg-phone" name="phone" type="tel" autocomplete="tel"
+                     placeholder="9621234567" inputmode="numeric"
+                     pattern="[0-9]{10}"
+                     title="Escribe 10 dígitos, sin espacios ni guiones">
+              <p class="field__error" id="err-phone" role="alert">
+                <span class="material-symbols-outlined icon-14">error</span>
+                <span class="field__error-text">Ingresa un teléfono de 10 dígitos</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Términos y condiciones -->
+          <label class="checkbox" for="reg-terms">
+            <span class="checkbox__box">
+              <input class="checkbox__input" id="reg-terms" name="terms" type="checkbox">
+              <span class="material-symbols-outlined icon-14 checkbox__icon">check</span>
+            </span>
+            <span class="checkbox__text">
+              Acepto los <strong>términos y condiciones</strong> y las <strong>políticas de privacidad</strong> de PokéVault.
+            </span>
+          </label>
+
+          <!-- Botón (deshabilitado hasta marcar el checkbox) -->
+          <button class="btn btn--primary btn--block text-label-lg" id="reg-submit-btn" type="submit" disabled>
+            <span class="material-symbols-outlined icon-18">how_to_reg</span>
+            <span>Registrarme</span>
+          </button>
+
+          <!-- Mensajes generales del formulario -->
+          <p class="form-message form-message--error" id="form-error" role="alert" hidden>
+            Completa todos los campos antes de enviar.
+          </p>
+          <p class="form-message form-message--success" id="form-success" role="status" hidden>
+            ¡Registro exitoso! Bienvenido a PokéVault, entrenador.
+          </p>
+        </form>
+
+        <!-- Garantías -->
+        <div class="form-assurance">
+          <div class="form-assurance__item">
+            <span class="material-symbols-outlined icon-18 color-tertiary">lock</span>
+            <span class="text-label-sm">Cifrado de grado coleccionista de 256 bits</span>
+          </div>
+          <div class="form-assurance__item">
+            <span class="material-symbols-outlined icon-18 color-secondary">verified_user</span>
+            <span class="text-label-sm">Certificado de autenticidad PSA / BGS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__copy text-body-sm">
+        <p>© 2025 PokéVault - Tienda de demostración sin fines comerciales ni pagos reales.</p>
+        <p>Plataforma de coleccionismo y cartas coleccionables certificadas.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces del pie de página">
+        <ul class="footer-nav__list">
+          <li><a class="footer-nav__link text-body-sm" href="catalogo.html">Catálogo</a></li>
+          <li><a class="footer-nav__link text-body-sm" href="quienes_somos.html">Quiénes somos</a></li>
+          <!-- URL absoluta (sitio externo) -->
+          <li><a class="footer-nav__link text-body-sm" href="https://www.pokemon.com" target="_blank" rel="noopener">Sitio oficial de Pokémon</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts del sitio -->
+  <script src="script.js"></script>
+  <script src="js/registro.js"></script>
+</body>
+</html>

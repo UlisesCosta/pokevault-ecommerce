@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéVault | Inicio</title>
+
+  <!-- Fuentes e iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" alt="Logo de PokéVault" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5gYF8yUi0aHlmH2EohUsjVlMr-Jc-oj6Jp1eS0lDGQ61rJit2q-g3h1_b6bGEahemji8zbBk8PSJcFe0Y-UnxSO0nT4vX-AjWiEXO8MtfmVhgbaVuPS6Z_N-GzwCsbu-z4NjyyGZq68QbWVdgXYaU8i00fgnJrBS2_O1Bc4QRic-feO81EQqohL8f8U2HaRq_XBHZKIEJymPgjgBYC7BtgMzxVqgGpyKg_BlPeo">
+        <span class="brand__name text-headline-sm">PokéVault</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link is-active" href="index.html" aria-current="page">Inicio</a></li>
+          <li><a class="main-nav__link" href="registro.html">Registro</a></li>
+          <li><a class="main-nav__link" href="quienes_somos.html">Quiénes somos</a></li>
+          <li><a class="main-nav__link" href="catalogo.html">Catálogo</a></li>
+          <li><a class="main-nav__link" href="carrito.html">Carrito</a></li>
+          <li><a class="main-nav__link" href="busqueda.html">Búsqueda</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="cart-link" href="carrito.html" aria-label="Ver carrito">
+          <span class="material-symbols-outlined icon-24">shopping_cart</span>
+          <span class="cart-count" id="cart-count">3</span>
+        </a>
+        <div class="avatar">
+          <span class="material-symbols-outlined icon-18">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+
+          <div class="hero__content">
+            <div class="badge text-label-sm">
+              <span class="badge__dot"></span>
+              Tienda demo coleccionable
+            </div>
+
+            <h1 class="text-display">
+              Tu Bóveda Definitiva de <br>
+              <span class="hero__title-accent">
+                Cartas Pokémon
+                <svg class="hero__underline" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 100 12" aria-hidden="true">
+                  <path d="M0,7 Q40,0 100,5 L100,11 Q50,6 0,12 Z"></path>
+                </svg>
+              </span>
+            </h1>
+
+            <p class="hero__text text-body-lg">
+              Explora cartas individuales, ediciones holofoil, paquetes sellados y rarezas de colección en un entorno seguro y transparente.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary text-label-lg" href="catalogo.html">
+                <span>Ver catálogo</span>
+                <span class="material-symbols-outlined icon-18">arrow_forward</span>
+              </a>
+              <a class="btn btn--outline text-label-lg" href="busqueda.html">
+                <span class="material-symbols-outlined icon-18">search</span>
+                <span>Buscar cartas</span>
+              </a>
+            </div>
+
+            <div class="hero__note text-body-sm">
+              <span class="material-symbols-outlined icon-18 color-tertiary">verified_user</span>
+              <span>Demostración interactiva sin transacciones reales</span>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="card-stack">
+
+              <!-- Carta izquierda -->
+              <div class="showcase-card showcase-card--left">
+                <div class="showcase-card__media">
+                  <img alt="Carta Lugia Neo Genesis holográfica en tonos azules y plateados" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqswJw68B468cG6s12xHXKKUmseIGXD8BqQs2i90UxxsDpoWdemkVlQ16GdacWeKcQMJKRswj_-mRc-Za1S5WZLUKUESIO2JpGr-NaSwt719wqoAN3MXHCsJbX4HbnOnT5AVddDw0Wl02jTnb-WhxCYlBd8wJ-FXPfeoikC4GykhsISvlCKEQz20c2peZGfEIt1TzHPKewgfAZ-Obt4y5vw-aJXWFoGf3dtNNtWaw">
+                  <span class="showcase-card__tag tag--blue text-label-sm">Holo Rare</span>
+                </div>
+                <div class="showcase-card__row">
+                  <span class="text-label-md truncate">Lugia 1st Edition</span>
+                  <span class="showcase-card__price text-price-md">$850</span>
+                </div>
+              </div>
+
+              <!-- Carta derecha -->
+              <div class="showcase-card showcase-card--right">
+                <div class="showcase-card__media">
+                  <img alt="Carta promocional Pikachu Illustrator con tonos amarillos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1TGyYW2ZyWUUNHTdxICGQDuo5PvjXW7t2FpXXbDyDYx7OomuCnLMIsgehmTilDouviAkraO1wbaotvFiD_Hcqy29Tc0LbQ_Pn1JT1NEdWooEnFBymwMESs7fl4LLMGqrHBM_mgru4aBgc8Pjx39hm_eLTYeY4Y6-7DqH9AtIDLIH5pBZBIDe6-gA2nwD0jNlFgj8_sbZ87f43lEQOeJbQ4fG5NESn9h05IvtM4-M">
+                  <span class="showcase-card__tag tag--yellow text-label-sm">Ultra Promo</span>
+                </div>
+                <div class="showcase-card__row">
+                  <span class="text-label-md truncate">Illustrator Pikachu</span>
+                  <span class="showcase-card__price text-price-md">$4,200</span>
+                </div>
+              </div>
+
+              <!-- Carta central -->
+              <div class="showcase-card showcase-card--main">
+                <div class="showcase-card__media">
+                  <img alt="Carta Charizard Base Set holográfica en tonos rojos y naranjas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeha8PtYFlmSsA2P1eu_DEzopZNWtK3n1dyE29r1MYCelNq9RYUnN3WJwc4KjKK2b9bnOGrYeRiLw0EiTrRliXnMswi6Edzwyvw6IBZZ3OxqDLFn0b5xw-T4wqkbZxStLVxme2QeN0_E6l0EDNKXuWc6ddbiMIiMNTo0kId_TCX3xk9XoW1O38hVT6GzfKqvwCZkx0YblEXdLIQD0GUpolcin3SboRpCcKOsAIyBs">
+                  <span class="showcase-card__tag tag--red text-label-sm">PSA 10 Gem</span>
+                </div>
+                <div class="showcase-card__info">
+                  <div class="showcase-card__row">
+                    <span class="text-headline-sm">Charizard Holo</span>
+                    <span class="showcase-card__price text-price-lg">$2,950</span>
+                  </div>
+                  <div class="showcase-card__row showcase-card__meta text-label-sm">
+                    <span>Base Set #4/102</span>
+                    <span class="chip-authentic">Auténtica</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS DESTACADAS -->
+    <section class="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-head__title text-headline-lg">
+              Categorías destacadas
+              <span class="section-head__bar"></span>
+            </h2>
+            <p class="section-head__text">
+              Enfoca tu colección explorando arquetipos elementales, rarezas prismáticas y piezas selladas de archivo.
+            </p>
+          </div>
+          <a class="link-arrow text-label-lg" href="catalogo.html">
+            <span>Ver todas las clasificaciones</span>
+            <span class="material-symbols-outlined icon-16">chevron_right</span>
+          </a>
+        </div>
+
+        <ul class="category-grid">
+          <li class="category-item">
+            <a class="category" href="catalogo.html">
+              <div>
+                <div class="category__icon color-primary">
+                  <span class="material-symbols-outlined icon-24">auto_awesome</span>
+                </div>
+                <h3 class="category__title text-headline-sm">Holo</h3>
+                <p class="category__text text-body-sm">Efectos laminados, prismas y reversas holográficas selectas.</p>
+              </div>
+              <div class="category__cta text-label-md">
+                <span>Explorar</span>
+                <span class="material-symbols-outlined icon-14">arrow_forward</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="category-item">
+            <a class="category" href="catalogo.html">
+              <div>
+                <div class="category__icon color-primary">
+                  <span class="material-symbols-outlined icon-24">workspace_premium</span>
+                </div>
+                <h3 class="category__title text-headline-sm">Clásicas</h3>
+                <p class="category__text text-body-sm">Sets originales de Wizards of the Coast y expansiones vintage.</p>
+              </div>
+              <div class="category__cta text-label-md">
+                <span>Explorar</span>
+                <span class="material-symbols-outlined icon-14">arrow_forward</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="category-item">
+            <a class="category" href="catalogo.html">
+              <div>
+                <div class="category__icon color-primary">
+                  <span class="material-symbols-outlined icon-24">local_fire_department</span>
+                </div>
+                <h3 class="category__title text-headline-sm">Fuego</h3>
+                <p class="category__text text-body-sm">Charizard, Moltres y los atacantes ígneos más cotizados.</p>
+              </div>
+              <div class="category__cta text-label-md">
+                <span>Explorar</span>
+                <span class="material-symbols-outlined icon-14">arrow_forward</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="category-item">
+            <a class="category" href="catalogo.html">
+              <div>
+                <div class="category__icon color-tertiary">
+                  <span class="material-symbols-outlined icon-24">water_drop</span>
+                </div>
+                <h3 class="category__title text-headline-sm">Agua</h3>
+                <p class="category__text text-body-sm">Blastoise, Suicune y criaturas acuáticas legendarias.</p>
+              </div>
+              <div class="category__cta text-label-md">
+                <span>Explorar</span>
+                <span class="material-symbols-outlined icon-14">arrow_forward</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="category-item">
+            <a class="category" href="catalogo.html">
+              <div>
+                <div class="category__icon color-secondary">
+                  <span class="material-symbols-outlined icon-24">bolt</span>
+                </div>
+                <h3 class="category__title text-headline-sm">Eléctricas</h3>
+                <p class="category__text text-body-sm">Pikachu, Raichu y relámpagos emblemáticos de toda generación.</p>
+              </div>
+              <div class="category__cta text-label-md">
+                <span>Explorar</span>
+                <span class="material-symbols-outlined icon-14">arrow_forward</span>
+              </div>
+            </a>
+          </li>
+
+          <li class="category-item">
+            <a class="category" href="catalogo.html">
+              <div>
+                <div class="category__icon color-primary">
+                  <span class="material-symbols-outlined icon-24">inventory_2</span>
+                </div>
+                <h3 class="category__title text-headline-sm">Packs sellados</h3>
+                <p class="category__text text-body-sm">Sobres de refuerzo intactos y cajas selladas de colección.</p>
+              </div>
+              <div class="category__cta text-label-md">
+                <span>Explorar</span>
+                <span class="material-symbols-outlined icon-14">arrow_forward</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="benefits">
+      <div class="container">
+        <div class="benefits__grid">
+
+          <div class="benefit">
+            <div class="benefit__icon color-primary">
+              <span class="material-symbols-outlined icon-28">verified</span>
+            </div>
+            <div class="benefit__body">
+              <h4 class="benefit__title text-headline-sm">Autenticidad garantizada</h4>
+              <p class="benefit__text text-body-sm">
+                Cada ejemplar pasa por una estricta inspección óptica y verificación de textura para asegurar piezas 100% legítimas y sin alteraciones.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit__icon color-tertiary">
+              <span class="material-symbols-outlined icon-28">shield</span>
+            </div>
+            <div class="benefit__body">
+              <h4 class="benefit__title text-headline-sm">Empaque bóveda seguro</h4>
+              <p class="benefit__text text-body-sm">
+                Funda semi-rígida, sleeve libre de ácido y refuerzo de acrílico o cartón de densidad industrial contra impactos o dobleces.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit__icon color-secondary">
+              <span class="material-symbols-outlined icon-28">local_shipping</span>
+            </div>
+            <div class="benefit__body">
+              <h4 class="benefit__title text-headline-sm">Envíos protegidos</h4>
+              <p class="benefit__text text-body-sm">
+                Trazabilidad en tiempo real y protocolos de entrega segura para que tu pieza llegue intacta desde nuestra bóveda hasta tus manos.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__copy text-body-sm">
+        <p>© 2025 PokéVault - Tienda de demostración sin fines comerciales ni pagos reales.</p>
+        <p>Plataforma de coleccionismo y cartas coleccionables certificadas.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces del pie de página">
+        <ul class="footer-nav__list">
+          <li><a class="footer-nav__link text-body-sm" href="catalogo.html">Catálogo</a></li>
+          <li><a class="footer-nav__link text-body-sm" href="quienes_somos.html">Quiénes somos</a></li>
+          <!-- URL absoluta (sitio externo) -->
+          <li><a class="footer-nav__link text-body-sm" href="https://www.pokemon.com" target="_blank" rel="noopener">Sitio oficial de Pokémon</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts del sitio -->
+  <script src="script.js"></script>
+</body>
+</html>

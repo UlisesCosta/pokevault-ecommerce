@@ -1,0 +1,358 @@
+
+
+/*  6. Inicio: hero  */
+.hero {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background-color: var(--surface-lowest);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-high);
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero__title-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.hero__underline {
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 100%;
+  height: 0.75rem;
+  color: var(--secondary-container);
+}
+
+.hero__text {
+  max-width: 36rem;
+  color: var(--on-surface-variant);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-xs);
+}
+
+.hero__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: var(--space-sm);
+  color: var(--on-surface-variant);
+}
+
+/* Composición de cartas */
+.hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.card-stack {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 480px;
+}
+
+.showcase-card {
+  position: absolute;
+  background-color: var(--surface-lowest);
+  border: 1px solid var(--surface-variant);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.showcase-card--left {
+  left: -1rem;
+  top: 4rem;
+  width: 13rem;
+  padding: 0.625rem;
+  transform: rotate(-8deg);
+}
+
+.showcase-card--right {
+  right: -1rem;
+  top: 6rem;
+  width: 13rem;
+  padding: 0.625rem;
+  transform: rotate(10deg);
+}
+
+.showcase-card--left:hover,
+.showcase-card--right:hover {
+  transform: rotate(0deg);
+}
+
+.showcase-card--main {
+  left: 50%;
+  top: 1rem;
+  z-index: 10;
+  width: 16rem;
+  padding: 0.75rem;
+  border: 2px solid var(--primary-container);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
+}
+
+.showcase-card--main:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.showcase-card__media {
+  position: relative;
+  width: 100%;
+  height: 14rem;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-low);
+}
+
+.showcase-card--main .showcase-card__media {
+  height: 16rem;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-container);
+}
+
+.showcase-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showcase-card__tag {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.tag--blue {
+  background-color: var(--surface-highest);
+  color: var(--tertiary);
+}
+
+.tag--yellow {
+  background-color: var(--secondary-fixed);
+  color: var(--on-secondary-fixed);
+}
+
+.tag--red {
+  background-color: var(--error-container);
+  color: var(--on-error-container);
+}
+
+.showcase-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-top: 0.5rem;
+}
+
+.showcase-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-top: 0.75rem;
+}
+
+.showcase-card__info .showcase-card__row {
+  padding-top: 0;
+}
+
+.showcase-card__meta {
+  color: var(--on-surface-variant);
+}
+
+.showcase-card__price {
+  color: var(--primary);
+}
+
+.chip-authentic {
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+  font-weight: 700;
+}
+
+/* ---------- 7. Inicio: categorías ---------- */
+.categories {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background-color: var(--surface-low);
+  border-top: 1px solid var(--surface-variant);
+  border-bottom: 1px solid var(--surface-variant);
+}
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.section-head__title {
+  display: inline-block;
+}
+
+.section-head__bar {
+  display: block;
+  width: 4rem;
+  height: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: var(--secondary-container);
+}
+
+.section-head__text {
+  max-width: 36rem;
+  margin-top: 0.5rem;
+  color: var(--on-surface-variant);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.category-item {
+  display: flex;
+}
+
+.category-item + .category-item {
+  border-top: 1px solid var(--surface-variant);
+}
+
+.category {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-md);
+  transition: background-color 0.2s;
+}
+
+.category:hover {
+  background-color: var(--surface-container);
+}
+
+.category__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-highest);
+  transition: transform 0.2s;
+}
+
+.category:hover .category__icon {
+  transform: scale(1.1);
+}
+
+.category__title {
+  margin-bottom: 0.25rem;
+  color: var(--on-surface);
+}
+
+.category__text {
+  color: var(--on-surface-variant);
+}
+
+.category__cta {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: var(--space-md);
+  color: var(--tertiary);
+}
+
+.category:hover .category__cta {
+  text-decoration: underline;
+}
+
+/* ---------- 8. Inicio: beneficios ---------- */
+.benefits {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background-color: var(--surface-lowest);
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+}
+
+.benefit + .benefit {
+  border-top: 1px solid var(--surface-variant);
+}
+
+.benefit__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-low);
+}
+
+.benefit__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.benefit__title {
+  color: var(--on-surface);
+}
+
+.benefit__text {
+  color: var(--on-surface-variant);
+  line-height: 1.625;
+}
+

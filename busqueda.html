@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéVault | Búsqueda</title>
+
+  <!-- Fuentes e iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/busqueda.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" alt="Logo de PokéVault" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5gYF8yUi0aHlmH2EohUsjVlMr-Jc-oj6Jp1eS0lDGQ61rJit2q-g3h1_b6bGEahemji8zbBk8PSJcFe0Y-UnxSO0nT4vX-AjWiEXO8MtfmVhgbaVuPS6Z_N-GzwCsbu-z4NjyyGZq68QbWVdgXYaU8i00fgnJrBS2_O1Bc4QRic-feO81EQqohL8f8U2HaRq_XBHZKIEJymPgjgBYC7BtgMzxVqgGpyKg_BlPeo">
+        <span class="brand__name text-headline-sm">PokéVault</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Inicio</a></li>
+          <li><a class="main-nav__link" href="registro.html">Registro</a></li>
+          <li><a class="main-nav__link" href="quienes_somos.html">Quiénes somos</a></li>
+          <li><a class="main-nav__link" href="catalogo.html">Catálogo</a></li>
+          <li><a class="main-nav__link" href="carrito.html">Carrito</a></li>
+          <li><a class="main-nav__link is-active" href="busqueda.html" aria-current="page">Búsqueda</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="cart-link" href="carrito.html" aria-label="Ver carrito">
+          <span class="material-symbols-outlined icon-24">shopping_cart</span>
+          <span class="cart-count" id="cart-count">3</span>
+        </a>
+        <div class="avatar">
+          <span class="material-symbols-outlined icon-18">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ENCABEZADO Y BUSCADOR -->
+    <section class="search-head">
+      <div class="container">
+
+        <div class="search-head__intro">
+          <span class="search-head__kicker text-label-sm">Catálogo y Bóveda Oficial</span>
+          <div class="page-title page-title--full">
+            <h1 class="text-headline-lg">Búsqueda en la Bóveda</h1>
+            <span class="page-title__bar"></span>
+          </div>
+          <p class="search-head__text">
+            Explora piezas certificadas por PSA, BGS y CGC con verificación criptográfica y procedencia garantizada.
+          </p>
+        </div>
+
+        <div class="search-box">
+          <form class="search-form" id="search-form" novalidate>
+            <div class="search-form__field">
+              <span class="material-symbols-outlined icon-24 search-form__icon">search</span>
+              <input class="search-form__input text-body-lg" id="search-input" name="q" type="text"
+                     aria-label="Término de búsqueda" autocomplete="off"
+                     placeholder="Buscar por Pokémon, edición, número de set o certificado...">
+            </div>
+            <button class="btn btn--primary search-form__btn text-label-lg" type="submit">
+              <span class="material-symbols-outlined icon-18">travel_explore</span>
+              <span>Buscar</span>
+            </button>
+          </form>
+
+          <p class="search-error text-label-md" id="search-error" role="alert" hidden>
+            Escribe algo para buscar, por ejemplo "Pikachu".
+          </p>
+
+          <div class="popular">
+            <span class="popular__label text-label-md">Búsquedas populares:</span>
+            <ul class="popular__list">
+              <li><button class="popular__btn text-label-md" type="button" data-term="Pikachu">Pikachu</button></li>
+              <li><button class="popular__btn text-label-md" type="button" data-term="Eevee">Eevee</button></li>
+              <li><button class="popular__btn text-label-md" type="button" data-term="1st Edition">1st Edition</button></li>
+              <li><button class="popular__btn text-label-md" type="button" data-term="Booster Box">Booster Box</button></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="results" aria-live="polite">
+      <div class="container">
+
+        <div class="results__head">
+          <h2 class="results__title text-headline-sm" id="results-title">Resultados de la búsqueda</h2>
+          <p class="results__count text-body-sm" id="results-count">
+            Escribe el nombre de una carta y presiona Buscar.
+          </p>
+        </div>
+
+        <ul class="results__list" id="results-list" hidden>
+
+          <li class="result">
+            <div class="result__main">
+              <div class="result__thumb">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE53DgjUTF7wtA7v4ZtsaIxzC_F9DnACui-HH_HDS4yoUFwUL8-zZaLwkT-sKhYdaSAndcjEybHTWlggqbivogG-V2XrqfOkDHvlGFsmzgwifpeCgLwE7nSwezNNDVqo1qfjvqtn4Q7sRfhYfs5cngJ0ABqwSL8PtJkg64beQTVFS7o4RRg_6a_aEpQTZpljKXJ5Z0_btKuRpNK9fbCoKtk6aOMhP6ltdqC2EvY70" alt="Carta Charizard Base Set holográfica en cápsula PSA">
+              </div>
+              <div class="result__info">
+                <div class="result__tags">
+                  <span class="rarity-tag rarity-tag--ultra text-label-sm">Ultra Rara</span>
+                  <span class="result__cert text-body-sm">
+                    <span class="material-symbols-outlined icon-14 color-tertiary">verified</span>
+                    Certificado #PV-9904
+                  </span>
+                </div>
+                <h3 class="result__title text-headline-sm">Charizard Base Set Holo #4/102 (1999)</h3>
+                <p class="result__detail text-body-sm">
+                  Condición: <strong>PSA 9 Mint</strong> | Edición Shadowless | Certificación Verificada
+                </p>
+              </div>
+            </div>
+
+            <div class="result__buy">
+              <div class="result__price-box">
+                <span class="result__price-label text-label-sm">Precio Bóveda</span>
+                <span class="result__price text-price-lg">$2,950.00</span>
+              </div>
+              <button class="btn btn--primary text-label-md js-add-result" type="button">
+                <span class="material-symbols-outlined icon-18">shopping_cart</span>
+                <span class="js-add-label">Agregar</span>
+              </button>
+            </div>
+          </li>
+
+          <li class="result">
+            <div class="result__main">
+              <div class="result__thumb">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMk227l_tVHf2J3yYF2vYhZO5L5m1FOiz9cLK5q81qbFhw09wmxT7VoeLL_VHX0baTNSG33yoLXaeI5_K4bgFAMVI1DKqb0gxzWEl9cyB-QnRLtsWDW8YLt8HWvUfy_YhZq6_nOUP4yWFY_ihgX36aDySkN0e7s0SOnOBag9XVltJbq4tTYXn4vdmh9YXqglWgnEanejSJwb9Jfkf7PN3WalVK_E4COUnTGIucmh8" alt="Carta Dark Charizard holográfica de Team Rocket 1.ª edición">
+              </div>
+              <div class="result__info">
+                <div class="result__tags">
+                  <span class="rarity-tag rarity-tag--holo text-label-sm">Holo</span>
+                  <span class="result__cert text-body-sm">
+                    <span class="material-symbols-outlined icon-14 color-tertiary">verified</span>
+                    Certificado #PV-8204
+                  </span>
+                </div>
+                <h3 class="result__title text-headline-sm">Dark Charizard Holo - Team Rocket 1st Edition #4/82</h3>
+                <p class="result__detail text-body-sm">
+                  Condición: <strong>Near Mint</strong> | Grado 8.5 | Sello Original Primera Edición
+                </p>
+              </div>
+            </div>
+
+            <div class="result__buy">
+              <div class="result__price-box">
+                <span class="result__price-label text-label-sm">Precio Bóveda</span>
+                <span class="result__price text-price-lg">$920.00</span>
+              </div>
+              <button class="btn btn--primary text-label-md js-add-result" type="button">
+                <span class="material-symbols-outlined icon-18">shopping_cart</span>
+                <span class="js-add-label">Agregar</span>
+              </button>
+            </div>
+          </li>
+
+          <li class="result">
+            <div class="result__main">
+              <div class="result__thumb">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD87T23ItLnxF8jaimowdY5yj78BmHNUhZyqC5JTRIDTMI9GNuh-XFN9bPLsPE94xX0MTUftkNisrhgL_9hwrDT6ASB7r-W72xvr45FyZo9xSQema8Jiza1EDbbSv5-5GDcNINF9i39sqrU4YeW9_a_bsMncWhKuwVzlqryhbFI3hqNbGUhjlpfPoERyxLlkxU8KNxedYf3W8YoH7eRwLPAiGOhjib2y-Du422XJbc" alt="Carta Charizard VMAX Shiny de Shining Fates">
+              </div>
+              <div class="result__info">
+                <div class="result__tags">
+                  <span class="rarity-tag rarity-tag--ultra text-label-sm">Ultra Rara</span>
+                  <span class="result__cert text-body-sm">
+                    <span class="material-symbols-outlined icon-14 color-tertiary">verified</span>
+                    Certificado #PV-3011
+                  </span>
+                </div>
+                <h3 class="result__title text-headline-sm">Charizard VMAX Shiny - Shining Fates SV107/SV122</h3>
+                <p class="result__detail text-body-sm">
+                  Condición: <strong>Gem Mint 10</strong> | Arte Secreto Brillante | Certificación Oficial
+                </p>
+              </div>
+            </div>
+
+            <div class="result__buy">
+              <div class="result__price-box">
+                <span class="result__price-label text-label-sm">Precio Bóveda</span>
+                <span class="result__price text-price-lg">$410.00</span>
+              </div>
+              <button class="btn btn--primary text-label-md js-add-result" type="button">
+                <span class="material-symbols-outlined icon-18">shopping_cart</span>
+                <span class="js-add-label">Agregar</span>
+              </button>
+            </div>
+          </li>
+
+          <li class="result">
+            <div class="result__main">
+              <div class="result__thumb">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk3Xu27FpbP50SMlwL44-Ph6hFhfXFs-BwOfIf1tDLzfmUe9pXrb0UT8yuL-lIgpyxVzqHkav5FCTspdBIVbPf59T6hlmAqTb0TfjGWIPWvjM79K1PSjyQ9E80a7nEYl69PMci--t7V7coY06N5FtcWN6BJDhYYNrSNyndrXnwFkTguZcC4QOh8zLCAURoDDT2g0fIQfIb_zUo-81fO6XzS2pUbRl9Y0yPEHupJwM" alt="Carta Blaine's Charizard holográfica de Gym Challenge">
+              </div>
+              <div class="result__info">
+                <div class="result__tags">
+                  <span class="rarity-tag rarity-tag--rare text-label-sm">Rara</span>
+                  <span class="result__cert text-body-sm">
+                    <span class="material-symbols-outlined icon-14 color-tertiary">verified</span>
+                    Certificado #PV-2002
+                  </span>
+                </div>
+                <h3 class="result__title text-headline-sm">Blaine's Charizard - Gym Challenge Holo #2/132</h3>
+                <p class="result__detail text-body-sm">
+                  Condición: <strong>Excelente</strong> | Set Original 2000 | Guardado en Cápsula UV
+                </p>
+              </div>
+            </div>
+
+            <div class="result__buy">
+              <div class="result__price-box">
+                <span class="result__price-label text-label-sm">Precio Bóveda</span>
+                <span class="result__price text-price-lg">$380.00</span>
+              </div>
+              <button class="btn btn--primary text-label-md js-add-result" type="button">
+                <span class="material-symbols-outlined icon-18">shopping_cart</span>
+                <span class="js-add-label">Agregar</span>
+              </button>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- AYUDA PERICIAL -->
+    <section class="concierge">
+      <div class="container concierge__inner">
+        <div class="concierge__text">
+          <div class="concierge__icon">
+            <span class="material-symbols-outlined icon-28">manage_search</span>
+          </div>
+          <div>
+            <h4 class="text-headline-sm">¿No encuentras lo que buscas?</h4>
+            <p class="concierge__lead">
+              Solicita una búsqueda pericial a nuestro equipo de tasadores. Rastrearemos piezas en colecciones privadas de todo el mundo con autenticación garantizada.
+            </p>
+          </div>
+        </div>
+        <a class="btn btn--outline text-label-lg" href="mailto:soporte@pokevault.com">
+          <span class="material-symbols-outlined icon-18">contact_support</span>
+          <span>Solicitar peritaje</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__copy text-body-sm">
+        <p>© 2025 PokéVault - Tienda de demostración sin fines comerciales ni pagos reales.</p>
+        <p>Plataforma de coleccionismo y cartas coleccionables certificadas.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces del pie de página">
+        <ul class="footer-nav__list">
+          <li><a class="footer-nav__link text-body-sm" href="catalogo.html">Catálogo</a></li>
+          <li><a class="footer-nav__link text-body-sm" href="quienes_somos.html">Quiénes somos</a></li>
+          <!-- URL absoluta (sitio externo) -->
+          <li><a class="footer-nav__link text-body-sm" href="https://www.pokemon.com" target="_blank" rel="noopener">Sitio oficial de Pokémon</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts del sitio -->
+  <script src="script.js"></script>
+  <script src="js/busqueda.js"></script>
+</body>
+</html>

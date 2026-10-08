@@ -1,0 +1,360 @@
+
+
+/* Misión */
+.about {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background-color: var(--surface-lowest);
+}
+
+.about__head {
+  margin-bottom: var(--space-lg);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.about__lead {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.375;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.about__body {
+  color: var(--on-surface-variant);
+}
+
+.about__body strong {
+  color: var(--on-surface);
+  font-weight: 600;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md) var(--space-lg);
+  padding-top: var(--space-sm);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat__value {
+  letter-spacing: -0.025em;
+}
+
+.stat__label {
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stat__divider {
+  width: 1px;
+  height: 2.5rem;
+  background-color: var(--surface-variant);
+}
+
+.about__media {
+  margin-top: var(--space-md);
+}
+
+.about__frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--surface-low);
+}
+
+.about__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding-top: var(--space-xs);
+  color: var(--on-surface-variant);
+}
+
+.about__caption-tag {
+  color: var(--tertiary);
+  letter-spacing: 0.025em;
+}
+
+/* Equipo */
+.team {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background-color: var(--surface-low);
+}
+
+.team__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.team__title {
+  margin-top: var(--space-xs);
+  letter-spacing: -0.025em;
+}
+
+.team__text {
+  max-width: 28rem;
+  color: var(--on-surface-variant);
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.team-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.team-table th {
+  width: 33.333%;
+  padding: var(--space-md) var(--space-md);
+  border-bottom: 1px solid var(--surface-variant);
+  color: var(--on-surface-variant);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.team-table td {
+  padding: var(--space-md);
+}
+
+.team-table th:first-child,
+.team-table td:first-child {
+  padding-left: 0;
+}
+
+.team-table th:last-child,
+.team-table td:last-child {
+  padding-right: 0;
+  text-align: right;
+}
+
+.team-table tbody tr + tr {
+  border-top: 1px solid var(--surface-variant);
+}
+
+.team-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.team-table tbody tr:hover {
+  background-color: var(--surface-lowest);
+}
+
+.team-table__col-role {
+  display: none;
+}
+
+.team-table__role {
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.member__avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-avatar);
+  background-color: var(--surface-container);
+  color: var(--on-surface);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.member__name {
+  display: block;
+  color: var(--on-surface);
+}
+
+.member__role-mobile {
+  color: var(--on-surface-variant);
+}
+
+.mail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--tertiary);
+}
+
+.mail-link:hover {
+  text-decoration: underline;
+}
+
+/* Botón "Ver más" y panel */
+.vault {
+  width: 100%;
+  padding: var(--space-xl) 0;
+  background-color: var(--surface-lowest);
+}
+
+.vault__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vault-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--surface-variant);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-lowest);
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.vault-toggle:hover {
+  background-color: var(--surface-low);
+}
+
+.vault-panel {
+  width: 100%;
+  max-width: 56rem;
+  margin-top: var(--space-lg);
+}
+
+.vault-panel__inner {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--surface-variant);
+}
+
+.vault-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  text-align: left;
+}
+
+.vault-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.vault-item__tag {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.vault-item p {
+  color: var(--on-surface-variant);
+}
+
+.vault-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-low);
+}
+
+.vault-cta__text {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.vault-cta__text p {
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .team__head {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .team-table__col-role {
+    display: table-cell;
+  }
+
+  .team-table__role-mobile,
+  .member__role-mobile {
+    display: none;
+  }
+
+  .team-table th:last-child,
+  .team-table td:last-child {
+    text-align: left;
+    padding-right: var(--space-md);
+  }
+
+  .vault-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .vault-cta {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about__grid {
+    grid-template-columns: 7fr 5fr;
+  }
+
+  .about__media {
+    margin-top: 0;
+  }
+}

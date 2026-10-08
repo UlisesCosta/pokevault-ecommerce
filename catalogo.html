@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéVault | Catálogo</title>
+
+  <!-- Fuentes e iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+
+  <!-- Estilos del sitio -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" alt="Logo de PokéVault" src="https://lh3.googleusercontent.com/aida/AEtjO1Un5gYF8yUi0aHlmH2EohUsjVlMr-Jc-oj6Jp1eS0lDGQ61rJit2q-g3h1_b6bGEahemji8zbBk8PSJcFe0Y-UnxSO0nT4vX-AjWiEXO8MtfmVhgbaVuPS6Z_N-GzwCsbu-z4NjyyGZq68QbWVdgXYaU8i00fgnJrBS2_O1Bc4QRic-feO81EQqohL8f8U2HaRq_XBHZKIEJymPgjgBYC7BtgMzxVqgGpyKg_BlPeo">
+        <span class="brand__name text-headline-sm">PokéVault</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Inicio</a></li>
+          <li><a class="main-nav__link" href="registro.html">Registro</a></li>
+          <li><a class="main-nav__link" href="quienes_somos.html">Quiénes somos</a></li>
+          <li><a class="main-nav__link is-active" href="catalogo.html" aria-current="page">Catálogo</a></li>
+          <li><a class="main-nav__link" href="carrito.html">Carrito</a></li>
+          <li><a class="main-nav__link" href="busqueda.html">Búsqueda</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="cart-link" href="carrito.html" aria-label="Ver carrito">
+          <span class="material-symbols-outlined icon-24">shopping_cart</span>
+          <span class="cart-count" id="cart-count">3</span>
+        </a>
+        <div class="avatar">
+          <span class="material-symbols-outlined icon-18">person</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- MIGAS DE PAN Y GARANTÍAS -->
+    <section class="topbar">
+      <div class="container topbar__inner">
+        <nav class="breadcrumb text-label-md" aria-label="Ruta de navegación">
+          <a class="breadcrumb__link" href="index.html">Inicio</a>
+          <span class="material-symbols-outlined icon-14">chevron_right</span>
+          <span class="breadcrumb__current">Catálogo</span>
+        </nav>
+        <div class="topbar__notes text-label-sm">
+          <span class="topbar__note">
+            <span class="topbar__dot"></span>
+            Autenticidad PSA / BGS 100% verificada
+          </span>
+          <span class="topbar__sep">|</span>
+          <span class="topbar__note">
+            <span class="material-symbols-outlined icon-16 color-tertiary">lock</span>
+            Envíos asegurados internacionales
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENCABEZADO DE LA PÁGINA -->
+    <section class="catalog-head">
+      <div class="container catalog-head__inner">
+        <div class="catalog-head__text">
+          <span class="kicker kicker--primary text-label-sm">Bóveda oficial TCG</span>
+          <div class="page-title page-title--full">
+            <h1 class="text-headline-lg">Catálogo de cartas coleccionables</h1>
+            <span class="page-title__bar"></span>
+          </div>
+          <p class="catalog-head__lead text-body-lg">
+            Explora nuestra selección verificada de piezas individuales y sobres sellados.
+          </p>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <span class="material-symbols-outlined icon-24 color-primary">verified</span>
+            <div>
+              <div class="metric__label text-label-sm">Calificación promedio</div>
+              <div class="metric__value text-label-lg">PSA 9.5+ Gem Mint</div>
+            </div>
+          </div>
+          <div class="metric">
+            <span class="material-symbols-outlined icon-24 color-tertiary">inventory_2</span>
+            <div>
+              <div class="metric__label text-label-sm">Stock disponible</div>
+              <div class="metric__value text-label-lg">348 ejemplares</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTROS Y ORDEN -->
+    <section class="filters">
+      <div class="container filters__inner">
+        <div class="chips" id="chip-filters">
+          <button class="chip text-label-md is-active" type="button" data-filter="all" aria-pressed="true">Todos los productos</button>
+          <button class="chip text-label-md" type="button" data-filter="holo" aria-pressed="false">Holo</button>
+          <button class="chip text-label-md" type="button" data-filter="ultra" aria-pressed="false">Ultra Rara</button>
+          <button class="chip text-label-md" type="button" data-filter="rara" aria-pressed="false">Rara</button>
+          <button class="chip text-label-md" type="button" data-filter="comun" aria-pressed="false">Común</button>
+          <button class="chip text-label-md" type="button" data-filter="primera" aria-pressed="false">Primera Edición</button>
+          <button class="chip text-label-md" type="button" data-filter="packs" aria-pressed="false">Packs Sellados</button>
+        </div>
+
+        <div class="filters__meta">
+          <p class="filters__count">
+            Mostrando <strong id="item-counter">9</strong> productos
+          </p>
+          <div class="filters__sort">
+            <label class="filters__sort-label text-label-sm" for="sort-select">Ordenar por:</label>
+            <select class="select text-label-md" id="sort-select">
+              <option value="featured">Destacados PokéVault</option>
+              <option value="price-desc">Mayor a menor precio</option>
+              <option value="price-asc">Menor a mayor precio</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DE PRODUCTOS -->
+    <section class="catalog">
+      <div class="container">
+        <div class="product-grid" id="product-grid">
+
+        <article class="product" data-category="holo primera" data-price="4200">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHDSF90pBQzXDfvxDLCp_UdBMV5pGUAhoniT7KSlcKGjux9cHH6mg9faEZxQ5IvZHGkKED8IhxZqpKAY3AqOxpqwUMwX_Bk69EouRbbvy6o4m9ezpHGz2YW6131dZ9OVBIaDZmZ4w3V2AXpGYW4tSd_2kzMKq5-LdM8qRDXnhjpRNV0xum2EDTRHPg0fhE1d2Xljt7Iazeru72kbVu7TQZxIIl8YMrbxpkztx625I" alt="Carta Charizard Base Set 1.ª edición holográfica">
+              <span class="product__grade">PSA 9</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--holo">Holo</span>
+              <span class="product__ref text-body-sm">4/102 • 1999</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Charizard Base Set 1st Edition</h3>
+            <p class="product__set text-body-sm">Base Set • Wizards of the Coast</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$4,200.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Charizard Base Set 1st Edition">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="ultra" data-price="9850">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9d-4OYLHZtjeQ7r3VurCV0KKPYL_NVe-uBnEbP3zbfXFSGBlE-1DPLQ5utx-4208xk2D15OKtMGhVY4TcQ62WwN24e8MQCurygtofC4QXLWwQE4Jsq95qHvTI779gwr3rtfqDjqOisIgwFS57zdY-veyvp9mV01Cr6-QCokx-1C_OUdeb-jw1ZS3UI5LCeWpf2efRUO7zhlLkWnEugLLXi8PhrnT3inPdXgH7Lfc" alt="Carta promocional Pikachu Illustrator de CoroCoro">
+              <span class="product__grade">BGS 9.5</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--ultra">Ultra Rara</span>
+              <span class="product__ref text-body-sm">Promo • 1998</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Pikachu Illustrator Promo</h3>
+            <p class="product__set text-body-sm">CoroCoro Contest Exclusive</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$9,850.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Pikachu Illustrator Promo">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="holo primera" data-price="2950">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3y36tcbE635IkuD13j-fWGSOSHDizfqQfFoJJDFvfgFrn9-TyE1onw_h-Bt_dH8u1PAtFy-p8ZtIjhxy45yzsXLsF9LTqmjvmQmQqXtFRluqyCji_Nv7GqZlt2cLcT-qlM5nqxm7n0D1CnKBeazlROdrIMZuGo10mqVLqFoQjI5vZKfwBo5cwFIJHUVtfouH5sv0w3FdvSxx0QqExp9qhPYZHcq6eKnhoVcA8Tdc" alt="Carta Lugia Neo Genesis holográfica 1.ª edición">
+              <span class="product__grade">PSA 10</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--holo">Holo</span>
+              <span class="product__ref text-body-sm">9/111 • 2000</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Lugia Neo Genesis Holo</h3>
+            <p class="product__set text-body-sm">Neo Genesis 1st Edition</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$2,950.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Lugia Neo Genesis Holo">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="ultra" data-price="850">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT97oGOYSRvU4ZORMET_IQeu3muZL24degMZhW4JZjuuy8b3H5OcQ_OOGLY4gJMXJiD6NKghjtsX4xa8z0zgSdTPALql1qUzNHB_gjyeu8KzeL5Ah0hxlyU4WpbOkLa5D0nIIAXDwkULeTNPF3tgOnts2ENdzmD7OpqeymYCcVQNvbOqyIBwaTwH-NhF9APe-cj6ZINJGG9gfwgH5yTLh2sR2QrDkny37o-TdQemU" alt="Carta Umbreon VMAX arte alternativo de Evolving Skies">
+              <span class="product__grade">CGC 9.5</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--ultra">Ultra Rara</span>
+              <span class="product__ref text-body-sm">215/203 • 2021</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Umbreon VMAX Alt Art</h3>
+            <p class="product__set text-body-sm">Sword &amp; Shield • Evolving Skies</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$850.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Umbreon VMAX Alt Art">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="rara" data-price="410">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0QdbBsFfdrICOK6eSFa9gDVLd_bPA02XVjEImgQ4eOvZEBrSm5NHjeHo1Hygx9_1E38Wiz7ZRW1CWZaO_QwiDiBgv0WzUneWJa2LLboOsLEwiR6pyPAvHUpiGuZ0lHBHg2W-CnGz7e3prvq9zNPn7UhEVw9TvlD7lnsz5w8wJr2VqWoFVPZjv7tsw4Bj3MXs5v6HKH6klBkqYUc7e_CcbzbJAc_8leljgSiBqOv4" alt="Carta Mewtwo GX secreta de Shining Legends">
+              <span class="product__grade">PSA 10</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--rare">Rara</span>
+              <span class="product__ref text-body-sm">78/73 • 2017</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Mewtwo GX Secreto</h3>
+            <p class="product__set text-body-sm">Shining Legends • Secret Rare</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$410.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Mewtwo GX Secreto">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="ultra" data-price="5100">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvZG9BGupRo8zlbxuHcBbVCgHClyOw_aJc2aNqgedNuN4XE6UY6JX47-Fp-zJ3qLh1opUEIT64stubpeiUZkzlDctmEmWe9l_rY7X4uT5uw7k32OVVIQbyMCIF7y9ExSk5LLd7xKfbN4sQg3KJTOJgHEy5cDULeCVCePj7TxWLEPQhFU7UJ1R58qMMPS5aVrVuuSB86Ijlt-mlEyeu3n5BA51FOlaYf30isfO976c" alt="Carta Rayquaza Gold Star de EX Deoxys">
+              <span class="product__grade">BGS 9</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--ultra">Ultra Rara</span>
+              <span class="product__ref text-body-sm">107/107 • 2005</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Rayquaza Gold Star</h3>
+            <p class="product__set text-body-sm">EX Deoxys • Star Rare</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$5,100.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Rayquaza Gold Star">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="holo primera" data-price="360">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjQvdrThNhOJf3nmK02FyIg_z4KLoOfNfRtMCGKJrPgE-kMuiPvj50bxSLSO6klSAXz4mqqLrSWe7U0XXvvByrgvtJqMXW8N-zIoKMRF8xkm9ZqgAioKru7f2nHw4szEbWvsq9k1enoGKgbw8EG1XBSJ8we25t4c-otLS9fpzHUxkeYo9PYXpChOVh8KZaNPVQhiOku5p9EOYR556QFIThwy_AeuSuY-PEjeF03f8" alt="Carta Gengar holográfica de Fossil 1.ª edición">
+              <span class="product__grade">PSA 9</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--holo">Holo</span>
+              <span class="product__ref text-body-sm">5/62 • 1999</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Gengar Holofoil Fossil</h3>
+            <p class="product__set text-body-sm">Fossil 1st Edition • WOTC</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$360.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Gengar Holofoil Fossil">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="rara" data-price="1450">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-t08ks8ytFIZ7YgArN6mTse8J2Rmuv553IdzrU-rxtJQ7cyczIMAGylH6d-9GLVqKwHVh7wI3hEQHJynw5CgZyabU_D90-qL5zBxGHcGhfVBxNAXmBwz45c9H3JqzY2fbNPp7ChE994dM88yMqnFgblsl2GcmbsDIHUeJbOzzl4vUPcISFM15l_6kTxiorDxLALK5Pr6D038L_bbTzfHQTP_ibMzpt6jnA-HXZI" alt="Carta Blastoise Base Set sin sombra">
+              <span class="product__grade">PSA 8.5</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--rare">Rara</span>
+              <span class="product__ref text-body-sm">2/102 • 1999</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Blastoise Shadowless</h3>
+            <p class="product__set text-body-sm">Base Set • Shadowless Variant</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$1,450.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Blastoise Shadowless">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+
+        <article class="product" data-category="comun packs" data-price="1800">
+          <div>
+            <div class="product__media">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDST2fkih1uZwG8lIPkmNwl3ecNGV9E7_-at2LBYwU94d0nd9Bm0lW1g1qZuureodCHNlW2wJ-pujd3H1qb7aZlGEKwOB3PjTvg01FwVMcSQS7a-otl5IijokM57rv61ySYpSyr_t0LZbjkrsrQwxs33URgzJyEgcW44gfd8aXawh6aOfInC7YqosH-U86fbmqZjEc7lLPSgcaXkGaXwn9p-3JKY7BV5yTvnqV5S1Q" alt="Sobre sellado de Base Set 1999 con arte de Charizard">
+              <span class="product__grade">Sellado</span>
+            </div>
+            <div class="product__meta">
+              <span class="rarity rarity--common">Común</span>
+              <span class="product__ref text-body-sm">11 Cartas • 1999</span>
+            </div>
+            <h3 class="product__name text-headline-sm">Booster Pack Base Set 1999</h3>
+            <p class="product__set text-body-sm">Empaque Sellado • Arte Charizard</p>
+          </div>
+          <div class="product__buy">
+            <div class="product__price-row">
+              <span class="product__price-label text-label-sm">Valor Bóveda</span>
+              <span class="price-tag text-price-md">$1,800.00</span>
+            </div>
+            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Booster Pack Base Set 1999">
+              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GARANTÍAS -->
+    <section class="assurance">
+      <div class="container">
+        <div class="assurance__grid">
+          <div class="assurance__item">
+            <div class="assurance__icon color-primary">
+              <span class="material-symbols-outlined icon-24">verified_user</span>
+            </div>
+            <div>
+              <h4 class="text-headline-sm">Grading certificado</h4>
+              <p class="assurance__text text-body-sm">
+                Cada ejemplar incluye número de serie auditable directamente en la base de datos de PSA, Beckett o CGC.
+              </p>
+            </div>
+          </div>
+
+          <div class="assurance__item">
+            <div class="assurance__icon color-tertiary">
+              <span class="material-symbols-outlined icon-24">shield</span>
+            </div>
+            <div>
+              <h4 class="text-headline-sm">Cápsula de bóveda hermética</h4>
+              <p class="assurance__text text-body-sm">
+                Empacado en estuche rígido anti-UV y sellado térmico para prevenir humedad y desgaste ambiental.
+              </p>
+            </div>
+          </div>
+
+          <div class="assurance__item">
+            <div class="assurance__icon color-secondary">
+              <span class="material-symbols-outlined icon-24">local_shipping</span>
+            </div>
+            <div>
+              <h4 class="text-headline-sm">Transporte blindado</h4>
+              <p class="assurance__text text-body-sm">
+                Seguro al 100% del valor comercial declarado con seguimiento satelital y entrega bajo firma personal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVISO AL AGREGAR AL CARRITO -->
+    <div class="toast" id="vault-toast" role="status" aria-live="polite">
+      <span class="material-symbols-outlined icon-20 toast__icon">check_circle</span>
+      <span class="text-body-sm" id="toast-message">Producto añadido al carrito</span>
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__copy text-body-sm">
+        <p>© 2025 PokéVault - Tienda de demostración sin fines comerciales ni pagos reales.</p>
+        <p>Plataforma de coleccionismo y cartas coleccionables certificadas.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces del pie de página">
+        <ul class="footer-nav__list">
+          <li><a class="footer-nav__link text-body-sm" href="catalogo.html">Catálogo</a></li>
+          <li><a class="footer-nav__link text-body-sm" href="quienes_somos.html">Quiénes somos</a></li>
+          <!-- URL absoluta (sitio externo) -->
+          <li><a class="footer-nav__link text-body-sm" href="https://www.pokemon.com" target="_blank" rel="noopener">Sitio oficial de Pokémon</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Scripts del sitio -->
+  <script src="script.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
