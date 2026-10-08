@@ -1,10 +1,3 @@
-/* ==========================================================
-   PokéVault - js/busqueda.js
-   Lógica solo de busqueda.html: muestra el texto buscado
-   en el área de resultados junto con productos ficticios.
-   Se carga después de script.js (global).
-   ========================================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
   iniciarBusqueda();
 });
@@ -21,7 +14,6 @@ function iniciarBusqueda() {
   var botonesPopulares = document.querySelectorAll(".popular__btn");
   var botonesAgregar = document.querySelectorAll(".js-add-result");
 
-  /* Ejemplo: "camisas" -> "Resultados para la búsqueda de camisas" */
   function buscar(texto) {
     var termino = texto.trim();
 
@@ -36,14 +28,13 @@ function iniciarBusqueda() {
 
     mensajeError.hidden = true;
 
-    // textContent / createElement evitan insertar HTML escrito por el usuario
     titulo.textContent = "Resultados para la búsqueda de ";
     var destacado = document.createElement("span");
     destacado.className = "results__query";
     destacado.textContent = termino;
     titulo.appendChild(destacado);
 
-    conteo.textContent = lista.children.length + " productos de ejemplo en la bóveda verificada";
+    conteo.textContent = lista.children.length + " productos de ejemplo";
     lista.hidden = false;
   }
 
@@ -56,7 +47,6 @@ function iniciarBusqueda() {
     mensajeError.hidden = true;
   });
 
-  /* Búsquedas populares: llenan el campo y buscan */
   botonesPopulares.forEach(function (boton) {
     boton.addEventListener("click", function () {
       campo.value = boton.dataset.term;
@@ -64,7 +54,6 @@ function iniciarBusqueda() {
     });
   });
 
-  /* Botón "Agregar": sube el contador del menú (definido en script.js) */
   botonesAgregar.forEach(function (boton) {
     boton.addEventListener("click", function () {
       if (window.sumarAlCarrito) {

@@ -135,7 +135,6 @@ document.addEventListener("input", (event) => {
         return;
     }
 
-    // Permite únicamente números.
     target.value = target.value.replace(/\D/g, "");
 
     updateCartTotals();
