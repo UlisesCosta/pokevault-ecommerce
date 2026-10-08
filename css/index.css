@@ -1,6 +1,9 @@
 
+.underline__title {
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-container);
+}
 
-/*  6. Inicio: hero  */
 .hero {
   width: 100%;
   padding: var(--space-xl) 0;
@@ -68,7 +71,6 @@
   color: var(--on-surface-variant);
 }
 
-/* Composición de cartas */
 .hero__visual {
   position: relative;
   display: flex;
@@ -210,10 +212,9 @@
   font-weight: 700;
 }
 
-/* ---------- 7. Inicio: categorías ---------- */
 .categories {
   width: 100%;
-  padding: var(--space-xl) 0;
+  padding: 20px 220px 0;
   background-color: var(--surface-low);
   border-top: 1px solid var(--surface-variant);
   border-bottom: 1px solid var(--surface-variant);
@@ -246,7 +247,7 @@
 
 .category-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .category-item {
@@ -307,7 +308,6 @@
   text-decoration: underline;
 }
 
-/* ---------- 8. Inicio: beneficios ---------- */
 .benefits {
   width: 100%;
   padding: var(--space-xl) 0;

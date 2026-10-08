@@ -1,6 +1,5 @@
 
 
-/* ---------- 1. Variables y reset ---------- */
 :root {
   /* Superficies */
   --surface: #faf8ff;
@@ -105,7 +104,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* ---------- 2. Tipografía ---------- */
 .text-display {
   font-family: var(--font-display);
   font-size: 48px;
@@ -170,7 +168,6 @@ button:focus-visible {
   font-weight: 600;
 }
 
-/* ---------- 3. Utilidades ---------- */
 .container {
   width: 100%;
   max-width: 1320px;
@@ -199,7 +196,6 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-/* ---------- 4. Botones ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -254,7 +250,6 @@ button:focus-visible {
   text-decoration: underline;
 }
 
-/* ---------- 5. Header y navegación ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -374,17 +369,6 @@ button:focus-visible {
   color: var(--on-primary);
 }
 
-/* ---------- 6. Elementos compartidos ---------- */
-.badge__dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: var(--secondary-container);
-}
-
-[hidden] {
-  display: none !important;
-}
 
 .eyebrow {
   display: inline-flex;
@@ -447,7 +431,6 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-/* ---------- 7. Footer ---------- */
 .site-footer {
   width: 100%;
   background-color: var(--surface-low);
