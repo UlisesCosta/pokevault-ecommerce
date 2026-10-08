@@ -6,5 +6,3 @@
 - Catálogo
 - Carrito
 - Búsqueda
-
-//pruebas para el push, si era eso me voy a matar
