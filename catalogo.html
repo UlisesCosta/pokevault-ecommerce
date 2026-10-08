@@ -5,19 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PokéVault | Catálogo</title>
 
-  <!-- Fuentes e iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@700;800&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
 
-  <!-- Estilos del sitio -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="css/catalogo.css">
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
@@ -39,11 +36,8 @@
       <div class="header-actions">
         <a class="cart-link" href="carrito.html" aria-label="Ver carrito">
           <span class="material-symbols-outlined icon-24">shopping_cart</span>
-          <span class="cart-count" id="cart-count">3</span>
+          <span class="cart-count" id="cart-count">0</span>
         </a>
-        <div class="avatar">
-          <span class="material-symbols-outlined icon-18">person</span>
-        </div>
       </div>
     </div>
   </header>
@@ -58,17 +52,6 @@
           <span class="material-symbols-outlined icon-14">chevron_right</span>
           <span class="breadcrumb__current">Catálogo</span>
         </nav>
-        <div class="topbar__notes text-label-sm">
-          <span class="topbar__note">
-            <span class="topbar__dot"></span>
-            Autenticidad PSA / BGS 100% verificada
-          </span>
-          <span class="topbar__sep">|</span>
-          <span class="topbar__note">
-            <span class="material-symbols-outlined icon-16 color-tertiary">lock</span>
-            Envíos asegurados internacionales
-          </span>
-        </div>
       </div>
     </section>
 
@@ -76,13 +59,12 @@
     <section class="catalog-head">
       <div class="container catalog-head__inner">
         <div class="catalog-head__text">
-          <span class="kicker kicker--primary text-label-sm">Bóveda oficial TCG</span>
           <div class="page-title page-title--full">
             <h1 class="text-headline-lg">Catálogo de cartas coleccionables</h1>
             <span class="page-title__bar"></span>
           </div>
           <p class="catalog-head__lead text-body-lg">
-            Explora nuestra selección verificada de piezas individuales y sobres sellados.
+            Explora todas las cartas del catálogo, agrupadas por rareza y tipo.
           </p>
         </div>
 
@@ -90,15 +72,15 @@
           <div class="metric">
             <span class="material-symbols-outlined icon-24 color-primary">verified</span>
             <div>
-              <div class="metric__label text-label-sm">Calificación promedio</div>
-              <div class="metric__value text-label-lg">PSA 9.5+ Gem Mint</div>
+              <div class="metric__label text-label-sm">Categorías</div>
+              <div class="metric__value text-label-lg">7 tipos de cartas</div>
             </div>
           </div>
           <div class="metric">
             <span class="material-symbols-outlined icon-24 color-tertiary">inventory_2</span>
             <div>
-              <div class="metric__label text-label-sm">Stock disponible</div>
-              <div class="metric__value text-label-lg">348 ejemplares</div>
+              <div class="metric__label text-label-sm">Cartas disponibles</div>
+              <div class="metric__value text-label-lg">19 productos</div>
             </div>
           </div>
         </div>
@@ -110,24 +92,26 @@
       <div class="container filters__inner">
         <div class="chips" id="chip-filters">
           <button class="chip text-label-md is-active" type="button" data-filter="all" aria-pressed="true">Todos los productos</button>
-          <button class="chip text-label-md" type="button" data-filter="holo" aria-pressed="false">Holo</button>
-          <button class="chip text-label-md" type="button" data-filter="ultra" aria-pressed="false">Ultra Rara</button>
-          <button class="chip text-label-md" type="button" data-filter="rara" aria-pressed="false">Rara</button>
           <button class="chip text-label-md" type="button" data-filter="comun" aria-pressed="false">Común</button>
-          <button class="chip text-label-md" type="button" data-filter="primera" aria-pressed="false">Primera Edición</button>
-          <button class="chip text-label-md" type="button" data-filter="packs" aria-pressed="false">Packs Sellados</button>
+          <button class="chip text-label-md" type="button" data-filter="raro" aria-pressed="false">Raro</button>
+          <button class="chip text-label-md" type="button" data-filter="shiny" aria-pressed="false">Shiny</button>
+          <button class="chip text-label-md" type="button" data-filter="flamas" aria-pressed="false">Phantasmal Flames</button>
+          <button class="chip text-label-md" type="button" data-filter="holo" aria-pressed="false">Holo</button>
+          <button class="chip text-label-md" type="button" data-filter="ultras" aria-pressed="false">Ultras</button>
+          <button class="chip text-label-md" type="button" data-filter="especial" aria-pressed="false">Especial</button>
         </div>
 
         <div class="filters__meta">
           <p class="filters__count">
-            Mostrando <strong id="item-counter">9</strong> productos
+            Mostrando <strong id="item-counter">19</strong> productos
           </p>
           <div class="filters__sort">
             <label class="filters__sort-label text-label-sm" for="sort-select">Ordenar por:</label>
             <select class="select text-label-md" id="sort-select">
-              <option value="featured">Destacados PokéVault</option>
+              <option value="featured">Orden de catálogo</option>
               <option value="price-desc">Mayor a menor precio</option>
               <option value="price-asc">Menor a mayor precio</option>
+              <option value="name-asc">Nombre: A-Z</option>
             </select>
           </div>
         </div>
@@ -138,231 +122,442 @@
     <section class="catalog">
       <div class="container">
         <div class="product-grid" id="product-grid">
+          <article class="product" data-category="comun" data-price="100" data-order="0" data-name="Comun (Común)">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/comun/comun.png" alt="Carta común">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--common">Común</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Illustration Collection Base</h3>
+              <p class="product__set text-body-sm">Booster Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$100.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Comun (Común)">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
 
-        <article class="product" data-category="holo primera" data-price="4200">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHDSF90pBQzXDfvxDLCp_UdBMV5pGUAhoniT7KSlcKGjux9cHH6mg9faEZxQ5IvZHGkKED8IhxZqpKAY3AqOxpqwUMwX_Bk69EouRbbvy6o4m9ezpHGz2YW6131dZ9OVBIaDZmZ4w3V2AXpGYW4tSd_2kzMKq5-LdM8qRDXnhjpRNV0xum2EDTRHPg0fhE1d2Xljt7Iazeru72kbVu7TQZxIIl8YMrbxpkztx625I" alt="Carta Charizard Base Set 1.ª edición holográfica">
-              <span class="product__grade">PSA 9</span>
+          <article class="product" data-category="raro" data-price="200" data-order="1" data-name="Raro (Raro)">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/raro/raro.png" alt="Carta rara">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--rare">Raro</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Chaos Rising</h3>
+              <p class="product__set text-body-sm">Booster Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--holo">Holo</span>
-              <span class="product__ref text-body-sm">4/102 • 1999</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$200.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Raro (Raro)">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Charizard Base Set 1st Edition</h3>
-            <p class="product__set text-body-sm">Base Set • Wizards of the Coast</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$4,200.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Charizard Base Set 1st Edition">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="ultra" data-price="9850">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9d-4OYLHZtjeQ7r3VurCV0KKPYL_NVe-uBnEbP3zbfXFSGBlE-1DPLQ5utx-4208xk2D15OKtMGhVY4TcQ62WwN24e8MQCurygtofC4QXLWwQE4Jsq95qHvTI779gwr3rtfqDjqOisIgwFS57zdY-veyvp9mV01Cr6-QCokx-1C_OUdeb-jw1ZS3UI5LCeWpf2efRUO7zhlLkWnEugLLXi8PhrnT3inPdXgH7Lfc" alt="Carta promocional Pikachu Illustrator de CoroCoro">
-              <span class="product__grade">BGS 9.5</span>
+          <article class="product" data-category="shiny" data-price="300" data-order="2" data-name="Shiny (Shiny)">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/shiny/shiny.png" alt="Carta Shiny">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--rare">Shiny</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Pitch Black</h3>
+              <p class="product__set text-body-sm">Booster Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--ultra">Ultra Rara</span>
-              <span class="product__ref text-body-sm">Promo • 1998</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$300.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Shiny (Shiny)">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Pikachu Illustrator Promo</h3>
-            <p class="product__set text-body-sm">CoroCoro Contest Exclusive</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$9,850.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Pikachu Illustrator Promo">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="holo primera" data-price="2950">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3y36tcbE635IkuD13j-fWGSOSHDizfqQfFoJJDFvfgFrn9-TyE1onw_h-Bt_dH8u1PAtFy-p8ZtIjhxy45yzsXLsF9LTqmjvmQmQqXtFRluqyCji_Nv7GqZlt2cLcT-qlM5nqxm7n0D1CnKBeazlROdrIMZuGo10mqVLqFoQjI5vZKfwBo5cwFIJHUVtfouH5sv0w3FdvSxx0QqExp9qhPYZHcq6eKnhoVcA8Tdc" alt="Carta Lugia Neo Genesis holográfica 1.ª edición">
-              <span class="product__grade">PSA 10</span>
+          <article class="product" data-category="flamas" data-price="400" data-order="3" data-name="Phantasmal Flames - Flama1">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/flamas/flama1.png" alt="Carta Phantasmal Flames Flama1">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--rare">Phantasmal Flames</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Charizard</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--holo">Holo</span>
-              <span class="product__ref text-body-sm">9/111 • 2000</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$400.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Phantasmal Flames - Flama1">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Lugia Neo Genesis Holo</h3>
-            <p class="product__set text-body-sm">Neo Genesis 1st Edition</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$2,950.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Lugia Neo Genesis Holo">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="ultra" data-price="850">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT97oGOYSRvU4ZORMET_IQeu3muZL24degMZhW4JZjuuy8b3H5OcQ_OOGLY4gJMXJiD6NKghjtsX4xa8z0zgSdTPALql1qUzNHB_gjyeu8KzeL5Ah0hxlyU4WpbOkLa5D0nIIAXDwkULeTNPF3tgOnts2ENdzmD7OpqeymYCcVQNvbOqyIBwaTwH-NhF9APe-cj6ZINJGG9gfwgH5yTLh2sR2QrDkny37o-TdQemU" alt="Carta Umbreon VMAX arte alternativo de Evolving Skies">
-              <span class="product__grade">CGC 9.5</span>
+          <article class="product" data-category="flamas" data-price="400" data-order="4" data-name="Phantasmal Flames - Flama2">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/flamas/flama2.png" alt="Carta Phantasmal Flames Flama2">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--rare">Phantasmal Flames</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Gengar</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--ultra">Ultra Rara</span>
-              <span class="product__ref text-body-sm">215/203 • 2021</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$400.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Phantasmal Flames - Flama2">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Umbreon VMAX Alt Art</h3>
-            <p class="product__set text-body-sm">Sword &amp; Shield • Evolving Skies</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$850.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Umbreon VMAX Alt Art">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="rara" data-price="410">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0QdbBsFfdrICOK6eSFa9gDVLd_bPA02XVjEImgQ4eOvZEBrSm5NHjeHo1Hygx9_1E38Wiz7ZRW1CWZaO_QwiDiBgv0WzUneWJa2LLboOsLEwiR6pyPAvHUpiGuZ0lHBHg2W-CnGz7e3prvq9zNPn7UhEVw9TvlD7lnsz5w8wJr2VqWoFVPZjv7tsw4Bj3MXs5v6HKH6klBkqYUc7e_CcbzbJAc_8leljgSiBqOv4" alt="Carta Mewtwo GX secreta de Shining Legends">
-              <span class="product__grade">PSA 10</span>
+          <article class="product" data-category="flamas" data-price="400" data-order="5" data-name="Phantasmal Flames - Flama3">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/flamas/flama3.png" alt="Carta Phantasmal Flames Flama3">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--rare">Phantasmal Flames</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Lopunny</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--rare">Rara</span>
-              <span class="product__ref text-body-sm">78/73 • 2017</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$400.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Phantasmal Flames - Flama3">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Mewtwo GX Secreto</h3>
-            <p class="product__set text-body-sm">Shining Legends • Secret Rare</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$410.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Mewtwo GX Secreto">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="ultra" data-price="5100">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvZG9BGupRo8zlbxuHcBbVCgHClyOw_aJc2aNqgedNuN4XE6UY6JX47-Fp-zJ3qLh1opUEIT64stubpeiUZkzlDctmEmWe9l_rY7X4uT5uw7k32OVVIQbyMCIF7y9ExSk5LLd7xKfbN4sQg3KJTOJgHEy5cDULeCVCePj7TxWLEPQhFU7UJ1R58qMMPS5aVrVuuSB86Ijlt-mlEyeu3n5BA51FOlaYf30isfO976c" alt="Carta Rayquaza Gold Star de EX Deoxys">
-              <span class="product__grade">BGS 9</span>
+          <article class="product" data-category="flamas" data-price="400" data-order="6" data-name="Phantasmal Flames - Flama4">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/flamas/flama4.png" alt="Carta Phantasmal Flames Flama4">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--rare">Phantasmal Flames</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Heracross</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--ultra">Ultra Rara</span>
-              <span class="product__ref text-body-sm">107/107 • 2005</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$400.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Phantasmal Flames - Flama4">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Rayquaza Gold Star</h3>
-            <p class="product__set text-body-sm">EX Deoxys • Star Rare</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$5,100.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Rayquaza Gold Star">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="holo primera" data-price="360">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjQvdrThNhOJf3nmK02FyIg_z4KLoOfNfRtMCGKJrPgE-kMuiPvj50bxSLSO6klSAXz4mqqLrSWe7U0XXvvByrgvtJqMXW8N-zIoKMRF8xkm9ZqgAioKru7f2nHw4szEbWvsq9k1enoGKgbw8EG1XBSJ8we25t4c-otLS9fpzHUxkeYo9PYXpChOVh8KZaNPVQhiOku5p9EOYR556QFIThwy_AeuSuY-PEjeF03f8" alt="Carta Gengar holográfica de Fossil 1.ª edición">
-              <span class="product__grade">PSA 9</span>
+          <article class="product" data-category="holo" data-price="500" data-order="7" data-name="Holo (Holo)">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/holo/holo.png" alt="Carta Holo">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--holo">Holo</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Ascension Heroic</h3>
+              <p class="product__set text-body-sm">Booster Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--holo">Holo</span>
-              <span class="product__ref text-body-sm">5/62 • 1999</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$500.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Holo (Holo)">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Gengar Holofoil Fossil</h3>
-            <p class="product__set text-body-sm">Fossil 1st Edition • WOTC</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$360.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Gengar Holofoil Fossil">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="rara" data-price="1450">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ-t08ks8ytFIZ7YgArN6mTse8J2Rmuv553IdzrU-rxtJQ7cyczIMAGylH6d-9GLVqKwHVh7wI3hEQHJynw5CgZyabU_D90-qL5zBxGHcGhfVBxNAXmBwz45c9H3JqzY2fbNPp7ChE994dM88yMqnFgblsl2GcmbsDIHUeJbOzzl4vUPcISFM15l_6kTxiorDxLALK5Pr6D038L_bbTzfHQTP_ibMzpt6jnA-HXZI" alt="Carta Blastoise Base Set sin sombra">
-              <span class="product__grade">PSA 8.5</span>
+          <article class="product" data-category="ultras" data-price="600" data-order="8" data-name="Ultra 1">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra1.png" alt="Carta Ultra 1">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Chandelure</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--rare">Rara</span>
-              <span class="product__ref text-body-sm">2/102 • 1999</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 1">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Blastoise Shadowless</h3>
-            <p class="product__set text-body-sm">Base Set • Shadowless Variant</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$1,450.00</span>
-            </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Blastoise Shadowless">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+          </article>
 
-        <article class="product" data-category="comun packs" data-price="1800">
-          <div>
-            <div class="product__media">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDST2fkih1uZwG8lIPkmNwl3ecNGV9E7_-at2LBYwU94d0nd9Bm0lW1g1qZuureodCHNlW2wJ-pujd3H1qb7aZlGEKwOB3PjTvg01FwVMcSQS7a-otl5IijokM57rv61ySYpSyr_t0LZbjkrsrQwxs33URgzJyEgcW44gfd8aXawh6aOfInC7YqosH-U86fbmqZjEc7lLPSgcaXkGaXwn9p-3JKY7BV5yTvnqV5S1Q" alt="Sobre sellado de Base Set 1999 con arte de Charizard">
-              <span class="product__grade">Sellado</span>
+          <article class="product" data-category="ultras" data-price="600" data-order="9" data-name="Ultra 2">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra2.png" alt="Carta Ultra 2">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Darkrai</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
             </div>
-            <div class="product__meta">
-              <span class="rarity rarity--common">Común</span>
-              <span class="product__ref text-body-sm">11 Cartas • 1999</span>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 2">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
             </div>
-            <h3 class="product__name text-headline-sm">Booster Pack Base Set 1999</h3>
-            <p class="product__set text-body-sm">Empaque Sellado • Arte Charizard</p>
-          </div>
-          <div class="product__buy">
-            <div class="product__price-row">
-              <span class="product__price-label text-label-sm">Valor Bóveda</span>
-              <span class="price-tag text-price-md">$1,800.00</span>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="10" data-name="Ultra 3">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra3.png" alt="Carta Ultra 3">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Dragalge</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
             </div>
-            <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Booster Pack Base Set 1999">
-              <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
-              Agregar al carrito
-            </button>
-          </div>
-        </article>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 3">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="11" data-name="Ultra 4">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra4.png" alt="Carta Ultra 4">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Excadrill</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 4">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="12" data-name="Ultra 5">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra5.png" alt="Carta Ultra 5">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Mosquito</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 5">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="13" data-name="Ultra 6">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra6.png" alt="Carta Ultra 6">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Floette</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 6">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="14" data-name="Ultra 7">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra7.png" alt="Carta Ultra 7">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Wigglypuff</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 7">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="15" data-name="Ultra 8">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra8.png" alt="Carta Ultra 8">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Meowth</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 8">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="16" data-name="Ultra 9">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra9.png" alt="Carta Ultra 9">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Pyroar</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 9">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="ultras" data-price="600" data-order="17" data-name="Ultra 10">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/ultras/ultra10.png" alt="Carta Ultra 10">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Ultra</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Starmie</h3>
+              <p class="product__set text-body-sm">Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$600.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Ultra 10">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="product" data-category="especial" data-price="700" data-order="18" data-name="Special (Especial)">
+            <div>
+              <div class="product__media">
+                <img src="imgs/catalogo/especial/special.png" alt="Carta especial">
+              </div>
+              <div class="product__meta">
+                <span class="rarity rarity--ultra">Especial</span>
+              </div>
+              <h3 class="product__name text-headline-sm">Reshiram</h3>
+              <p class="product__set text-body-sm">Especial Individual Pack</p>
+            </div>
+            <div class="product__buy">
+              <div class="product__price-row">
+                <span class="product__price-label text-label-sm">Precio</span>
+                <span class="price-tag text-price-md">$700.00</span>
+              </div>
+              <button class="btn btn--primary btn--block text-label-md js-add-to-cart" type="button" data-name="Special (Especial)">
+                <span class="material-symbols-outlined icon-16">add_shopping_cart</span>
+                Agregar al carrito
+              </button>
+            </div>
+          </article>
         </div>
       </div>
     </section>

@@ -1,13 +1,9 @@
 /* ==========================================================
    PokéVault - js/catalogo.js
-   Lógica solo de catalogo.html: filtros por categoría,
-   orden por precio y botón "Agregar al carrito".
-   Se carga después de script.js (global).
+   Filtros, ordenamiento y acciones del catálogo.
    ========================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
-  iniciarCatalogo();
-});
+document.addEventListener("DOMContentLoaded", iniciarCatalogo);
 
 function iniciarCatalogo() {
   var cuadricula = document.getElementById("product-grid");
@@ -20,21 +16,14 @@ function iniciarCatalogo() {
   var avisoTexto = document.getElementById("toast-message");
   var temporizador = null;
   var filtroActual = "all";
-
+  var comparadorNombres = new Intl.Collator("es", { sensitivity: "base" });
   var productos = Array.prototype.slice.call(cuadricula.querySelectorAll(".product"));
 
-  // Guardamos el orden original para el criterio "Destacados"
-  productos.forEach(function (producto, i) {
-    producto.dataset.order = i;
-  });
-
-  /* ---------- Filtro por categoría ---------- */
   function aplicarFiltro() {
     var visibles = 0;
 
     productos.forEach(function (producto) {
-      var categorias = producto.dataset.category.split(" ");
-      var coincide = filtroActual === "all" || categorias.indexOf(filtroActual) !== -1;
+      var coincide = filtroActual === "all" || producto.dataset.category === filtroActual;
       producto.hidden = !coincide;
       if (coincide) visibles++;
     });
@@ -50,19 +39,22 @@ function iniciarCatalogo() {
       });
       chip.classList.add("is-active");
       chip.setAttribute("aria-pressed", "true");
-
       filtroActual = chip.dataset.filter;
       aplicarFiltro();
     });
   });
 
-  /* ---------- Orden por precio ---------- */
   selectOrden.addEventListener("change", function () {
-    var criterio = selectOrden.value;
-
     var ordenados = productos.slice().sort(function (a, b) {
-      if (criterio === "price-desc") return Number(b.dataset.price) - Number(a.dataset.price);
-      if (criterio === "price-asc") return Number(a.dataset.price) - Number(b.dataset.price);
+      if (selectOrden.value === "price-desc") {
+        return Number(b.dataset.price) - Number(a.dataset.price);
+      }
+      if (selectOrden.value === "price-asc") {
+        return Number(a.dataset.price) - Number(b.dataset.price);
+      }
+      if (selectOrden.value === "name-asc") {
+        return comparadorNombres.compare(a.dataset.name, b.dataset.name);
+      }
       return Number(a.dataset.order) - Number(b.dataset.order);
     });
 
@@ -71,7 +63,6 @@ function iniciarCatalogo() {
     });
   });
 
-  /* ---------- Agregar al carrito (demostración) ---------- */
   function mostrarAviso(mensaje) {
     avisoTexto.textContent = mensaje;
     aviso.classList.add("is-visible");
@@ -88,9 +79,10 @@ function iniciarCatalogo() {
 
     mostrarAviso(boton.dataset.name + " añadido al carrito");
 
-    // Sube el contador ficticio del menú (definido en script.js)
     if (window.sumarAlCarrito) {
       window.sumarAlCarrito(1);
     }
   });
+
+  aplicarFiltro();
 }

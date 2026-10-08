@@ -246,6 +246,10 @@
   transition: border-color 0.2s;
 }
 
+.product[hidden] {
+  display: none;
+}
+
 .product:hover {
   border-color: var(--on-surface);
 }
